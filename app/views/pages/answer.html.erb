@@ -1,0 +1,32 @@
+<% if params[:ask] == 'I am going to work' %>
+    <div class='box-styling'>
+      <%= @parameter %>
+      <p><em>- You</em></p>
+    </div>
+    <div class='box-styling coach-response'>
+      <p>Great! <br>
+      <em>- Your coach</em></p>
+    </div>
+
+<% elsif params[:ask].include? '?' %>
+    <div class='box-styling'>
+      <%= @parameter %>
+      <p><em>- You</em></p>
+    </div>
+    <div class='box-styling coach-response'>
+      <p>Silly question, get dressed and go to work!</p>
+      <p><em>- Your coach</em></p>
+    </div>
+
+<% else %>
+    <div class='box-styling'>
+      <%= @parameter %>
+      <p><em>- You</em></p>
+    </div>
+    <div class='box-styling coach-response'>
+      <p>I don't care, get dressed and go to work!</p>
+      <p><em>- Your coach</em></p>
+    </div>
+<% end %>
+
+<button type='button'><%= link_to 'Ask a new question', ask_path, {:class => "style_button"} %></button>
